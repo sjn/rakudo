@@ -637,6 +637,10 @@ my class X::Syntax::InfixInTermPosition does X::Syntax {
     }
 }
 
+my class X::Syntax::UnquoteOutsideQuasi does X::Syntax {
+    method message() { 'Can only use unquote syntax inside a quasi block'; }
+}
+
 my class X::Attribute::Package does X::Comp {
     has $.package-type;
     method message() { "A $.package-type cannot have attributes" }
