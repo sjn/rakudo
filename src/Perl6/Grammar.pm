@@ -2253,6 +2253,7 @@ grammar Perl6::Grammar is HLL::Grammar {
     token quote:sym<quasi> {
         <sym> <.ws> <!before '('>
         :my $*IN_QUASI := 1;
+        :my @*UNQUOTE_ASTS := [];
         <block>
     }
 
